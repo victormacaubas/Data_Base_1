@@ -55,12 +55,15 @@ def procura(plivro, isbnp):
 def mostre(plivro, pos):
     plivro.seek(pos * 60)
     data = plivro.read(60)  # Assuming 4 bytes for int, 52 bytes for str, and 4 bytes for int
-    livro = Livro(*struct.unpack('i52si', data))
+    isbn = struct.unpack('i', data[:4])[0]
+    titulo = data[4:56].decode('utf-8', errors='replace').strip()
+    ano = struct.unpack('i', data[-4:])[0]
+
     print("\n\n")
     linha()
     print("ISBN titulo ano")
     linha()
-    print(f"{livro.isbn:9} | {livro.titulo:<20} | {livro.ano}")
+    print(f"{isbn:9} | {titulo:<20} | {ano}")
     linha()
 
 def consultar(plivro):
@@ -131,9 +134,11 @@ def listagem(plivro):
             data = plivro.read(60)  # Assuming 4 bytes for int, 52 bytes for str, and 4 bytes for int
             if not data:
                 break
-            livro = Livro(*struct.unpack('i52si', data))
-            if livro.isbn != 0:
-                print(f"{livro.isbn:9} | {livro.titulo:<20} | {livro.ano}")
+            isbn = struct.unpack('i', data[:4])[0]
+            titulo = data[4:56].decode('utf-8', errors='replace').strip()
+            ano = struct.unpack('i', data[-4:])[0]
+            if isbn != 0:
+                print(f"{isbn:9} | {titulo:<20} | {ano}")
         linha()
         resp = int(input("Tecle 1 para voltar ao menu..."))
 
