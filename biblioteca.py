@@ -40,7 +40,7 @@ def remove_book(data, isbn):
 def find_book(data, isbn):
     for livro in data:
         if livro['isbn'] == isbn:
-            print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
+            return livro
     input("\nTecle Enter para voltar ao menu...")
         
 
