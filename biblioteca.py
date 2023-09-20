@@ -24,7 +24,7 @@ def save_data(data):
         json.dump(data, file, indent=4)
 
 def insert_book(data, livro):
-    data.append({'isbn': livro.isbn, 'titulo': livro.titulo, 'ano': livro.ano})
+    data.append({'isbn': livro.isbn, 'titulo': livro.titulo, 'ano': livro.ano, 'autor': livro.autor})
     save_data(data)
     print("\nLivro cadastrado com sucesso!\n")
 
@@ -40,8 +40,7 @@ def remove_book(data, isbn):
 def find_book(data, isbn):
     for livro in data:
         if livro['isbn'] == isbn:
-            
-            print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']}")
+            print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
     input("\nTecle Enter para voltar ao menu...")
         
 
@@ -50,10 +49,10 @@ def list_books(data):
     print("Biblioteca Unicap")
     print("_" * 80)
     print("\nListagem Geral\n")
-    print("ISBN    |        Título        |   Ano")
+    print("ISBN    |        Título        |   Ano|     Autor     ")
     print("_" * 80)
     for livro in data:
-        print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']}")
+        print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
     input("\nTecle Enter para voltar ao menu...")
 
 def main():
@@ -71,7 +70,7 @@ def main():
         print("0- Sair")
         op = input("\nInforme a opção desejada: ")
         if op == "1":
-            livro = Livro(input("ISBN: "), input("Título: "), input("Ano: "))
+            livro = Livro(input("ISBN: "), input("Título: "), input("Ano: "), input("Autor: "))
             insert_book(data, livro)
         elif op == "2":
             isbn = input("ISBN: ")
@@ -80,7 +79,7 @@ def main():
             isbn = input("ISBN do livro: ")
             livro = find_book(data, isbn)
             if livro:
-                print(f"\nISBN {livro['isbn']} | {livro['titulo']} | {livro['ano']}")
+                print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
             else:
                 print("\nISBN não encontrada!\n")
         elif op == "4":
