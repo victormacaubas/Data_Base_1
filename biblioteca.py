@@ -2,10 +2,11 @@ import os
 import json
 
 class Livro:
-    def __init__(self, isbn, titulo, ano):
+    def __init__(self, isbn, titulo, ano, autor):
         self.isbn = isbn
         self.titulo = titulo
         self.ano = ano
+        self.autor = autor
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
@@ -15,7 +16,7 @@ def load_data():
         with open('livro.json', 'r') as file:
             data = json.load(file)
     except FileNotFoundError:
-        data = []
+        data = {}
     return data
 
 def save_data(data):
@@ -57,7 +58,8 @@ def list_books(data):
 
 def main():
     data = load_data()
-    while True:
+    op = None
+    while op != 0:
         clear_screen()
         print("Biblioteca Unicap")
         print("_" * 80)
@@ -83,8 +85,6 @@ def main():
                 print("\nISBN não encontrada!\n")
         elif op == "4":
             list_books(data)
-        elif op == "0":
-            break
         else:
             print("\nOpção inválida!")
 
