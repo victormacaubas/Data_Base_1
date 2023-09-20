@@ -15,7 +15,7 @@ def load_data():
         with open('livro.json', 'r') as file:
             data = json.load(file)
     except FileNotFoundError:
-        data = []
+        data = {}
     return data
 
 def save_data(data):
@@ -57,7 +57,8 @@ def list_books(data):
 
 def main():
     data = load_data()
-    while True:
+    op = None
+    while op != 0:
         clear_screen()
         print("Biblioteca Unicap")
         print("_" * 80)
@@ -83,8 +84,6 @@ def main():
                 print("\nISBN não encontrada!\n")
         elif op == "4":
             list_books(data)
-        elif op == "0":
-            break
         else:
             print("\nOpção inválida!")
 
