@@ -2,10 +2,11 @@ import os
 import json
 
 class Livro:
-    def __init__(self, isbn, titulo, ano):
+    def __init__(self, isbn, titulo, ano, autor):
         self.isbn = isbn
         self.titulo = titulo
         self.ano = ano
+        self.autor = autor
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
