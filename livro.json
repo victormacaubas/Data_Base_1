@@ -4,5 +4,62 @@
         "titulo": "Harry Potter e a Pedra Filosofal ",
         "ano": "2000",
         "autor": "J. K. Rowling"
+    },
+
+    {
+        "isbn": "9780002008037",
+        "titulo": "Os Segredos da Mente Milionária ",
+        "ano": "2017",
+        "autor": " Carol S. Dweck "
+    },
+    {
+        "isbn": "9786555606454",
+        "titulo": " Elon Musk ",
+        "ano": "2023",
+        "autor": " Walter Isaacson "
+    },
+    {
+        "isbn": "9788563560476",
+        "titulo": "Grandes esperanças",
+        "ano": "2012",
+        "autor": "  Charles Dickens "
+    },
+    {
+        "isbn": "9786554700016",
+        "titulo": "Dom Casmurro",
+        "ano": "2023",
+        "autor": "  Machado Assis "
+    },
+    {
+        "isbn": "8535909559",
+        "titulo": "A Revolução dos Bichos",
+        "ano": "2007",
+        "autor": "   George Orwell "
+    },
+    {
+        "isbn": "6589678006",
+        "titulo": "1984",
+        "ano": "2009",
+        "autor": "  George Orwell "
+    },
+    {
+        "isbn": "8572839046",
+        "titulo": "O Príncipe",
+        "ano": "2018",
+        "autor": "  Nicolau Maquiavel "
+    },
+    {
+        "isbn": "8550801488",
+        "titulo": "Pai Rico, Pai Pobre ",
+        "ano": "2018",
+        "autor": " Robert T. Kiyosakil "
+    },
+    {
+        "isbn": "8547000240",
+        "titulo": "Mindset: A nova psicologia do sucesso  ",
+        "ano": "2017",
+        "autor": "  Carol S. Dweck "
     }
+
+
 ]
