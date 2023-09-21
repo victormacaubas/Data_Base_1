@@ -49,10 +49,10 @@ def list_books(data):
     print("Biblioteca Unicap")
     print("_" * 80)
     print("\nListagem Geral\n")
-    print("ISBN    |        Título        |   Ano|     Autor     ")
+    print("ISBN            |              Título                   | Ano  |     Autor     ")
     print("_" * 80)
     for livro in data:
-        print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
+        print(f"{livro['isbn']:15} | {livro['titulo']:25} | {livro['ano']} | {livro['autor']:<15}")
     input("\nTecle Enter para voltar ao menu...")
 
 def main():
@@ -79,11 +79,13 @@ def main():
             isbn = input("ISBN do livro: ")
             livro = find_book(data, isbn)
             if livro:
-                print(f"{livro['isbn']:9} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
+                print(f"{livro['isbn']:15} | {livro['titulo']:<20} | {livro['ano']} | {livro['autor']:<15}")
             else:
                 print("\nISBN não encontrada!\n")
         elif op == "4":
             list_books(data)
+        elif op == "0":
+            exit()
         else:
             print("\nOpção inválida!")
 
