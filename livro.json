@@ -5,10 +5,9 @@
         "ano": "2000",
         "autor": "J. K. Rowling"
     },
-
     {
         "isbn": "9780002008037",
-        "titulo": "Os Segredos da Mente Milionária ",
+        "titulo": "Os Segredos da Mente Milion\u00c3\u00a1ria ",
         "ano": "2017",
         "autor": " Carol S. Dweck "
     },
@@ -20,7 +19,7 @@
     },
     {
         "isbn": "9788563560476",
-        "titulo": "Grandes esperanças",
+        "titulo": "Grandes esperan\u00c3\u00a7as",
         "ano": "2012",
         "autor": "  Charles Dickens "
     },
@@ -32,7 +31,7 @@
     },
     {
         "isbn": "8535909559",
-        "titulo": "A Revolução dos Bichos",
+        "titulo": "A Revolu\u00c3\u00a7\u00c3\u00a3o dos Bichos",
         "ano": "2007",
         "autor": "   George Orwell "
     },
@@ -44,7 +43,7 @@
     },
     {
         "isbn": "8572839046",
-        "titulo": "O Príncipe",
+        "titulo": "O Pr\u00c3\u00adncipe",
         "ano": "2018",
         "autor": "  Nicolau Maquiavel "
     },
@@ -57,7 +56,7 @@
     {
         "isbn": "8547000240",
         "titulo": "Mindset: A nova psicologia do sucesso  ",
-        "ano": "2017",
+        "ano": "2018",
         "autor": "  Carol S. Dweck "
     }
 ]

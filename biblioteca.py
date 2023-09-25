@@ -35,14 +35,22 @@ def remove_book(data, isbn):
             save_data(data)
             print("\nLivro removido com sucesso!")
             return
-    print("\nLivro não encontrado!\a")
+    print("\nLivro não encontrado!\n")
+
+def update_book(data, isbn, field, new_value):
+    for livro in data:
+        if livro['isbn'] == isbn:
+            livro[field] = new_value
+            save_data(data)
+            print(f"\nInformação '{field}' atualizada com sucesso!\n")
+            return
+    print("\nLivro não encontrado!\n")
 
 def find_book(data, isbn):
     for livro in data:
         if livro['isbn'] == isbn:
             return livro
     input("\nTecle Enter para voltar ao menu...")
-        
 
 def list_books(data):
     clear_screen()
@@ -58,7 +66,7 @@ def list_books(data):
 def main():
     data = load_data()
     op = None
-    while op != 0:
+    while op != '0':
         clear_screen()
         print("Biblioteca Unicap")
         print("_" * 80)
@@ -67,6 +75,7 @@ def main():
         print("2- Remover livro")
         print("3- Consultar livro por ISBN")
         print("4- Listagem geral")
+        print("5- Atualizar informação do livro")
         print("0- Sair")
         op = input("\nInforme a opção desejada: ")
         if op == "1":
@@ -84,6 +93,11 @@ def main():
                 print("\nISBN não encontrada!\n")
         elif op == "4":
             list_books(data)
+        elif op == "5":
+            isbn = input("ISBN do livro que deseja atualizar: ")
+            field = input("Campo que deseja atualizar (ISBN, Título, Ano, Autor): ").lower()
+            new_value = input(f"Novo valor para o campo '{field}': ")
+            update_book(data, isbn, field, new_value)
         elif op == "0":
             exit()
         else:
