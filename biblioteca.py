@@ -16,7 +16,7 @@ def load_data():
         with open('livro.json', 'r') as file:
             data = json.load(file)
     except FileNotFoundError:
-        data = []
+        data = {}
     return data
 
 def save_data(data):
